@@ -3,3 +3,17 @@ This will normalize the following events:
 -File changes (upload, download, change, delete)
 
 
+Log samples:
+
+Login successful
+<14>Aug 22 08:36:22 nextcloudpi ownCloud[967]: {admin_audit} Login attempt: "user"
+
+Login failed
+<12>Aug 22 08:37:28 nextcloudpi ownCloud[967]: {core} Login failed: 'testi123' (Remote IP: '192.168.1.1')
+<14>Aug 22 08:37:28 nextcloudpi ownCloud[967]: {admin_audit} Login attempt: "testi123"
+<14>Aug 22 08:37:28 nextcloudpi ownCloud[967]: {core} Bruteforce attempt from "192.168.1.1" detected for action "login".
+
+File changes
+<14>Aug 22 08:36:27 nextcloudpi ownCloud[967]: {admin_audit} File updated: "/Folder/Folder2/file.extension"
+<14>Aug 22 08:36:27 nextcloudpi ownCloud[967]: {admin_audit} File written to: "/Folder/Folder2/file.extension"
+<14>Aug 22 08:36:26 nextcloudpi ownCloud[968]: {admin_audit} File created: "/Folder/Folder2/file.extension"
