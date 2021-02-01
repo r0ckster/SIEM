@@ -1,0 +1,3 @@
+This will normalize the following events:
+-Login attempts
+-File changes (upload, download, change, delete)
