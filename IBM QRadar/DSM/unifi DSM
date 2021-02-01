@@ -2,3 +2,20 @@ Normalized events for controller and wap succ/fail logins.
 Quick and dirty.
 
 
+Log samples
+
+WAP
+
+Succ
+<14>Aug 22 10:59:19 ("U7LT,788a205089,v3.9.42") libubnt[9281]: wevent.ubnt_custom_event(): EVENT_STA_IP ath2: 01:00:00:0A:00:00 / 192.168.1.1
+
+<14>Aug 22 10:59:19 ("U7LT,788a205089,v3.9.42") libubnt[9281]: wevent.ubnt_handle_custom_alert_sta_assoc(): EVT_AP_STA_ASSOC_TRACKER: event_id:1 vap: ath2 sta_mac: 01:00:00:0A:00:00 auth_ts:1696044.964508 auth_delta: 0 assoc_delta:0 disassoc_count:0 wpa_auth_delta: 10000 radius_auth_status: N/A ip_delta: 2310000 ip_assign_type: dhcp auth_failures: 0 assoc_failures: 0 wpa_auth_failures: 0 ip_failures: 0 event_type: success 
+
+Wrong PW
+<14>Aug 22 10:56:30 ("U7LT,788a205089,v3.9.42") libubnt[9281]: wevent.ubnt_handle_custom_alert_sta_assoc(): EVT_AP_STA_ASSOC_TRACKER: event_id:1 vap: ath1 sta_mac: 01:00:00:0A:00:00 auth_ts:1695868.286587 auth_delta: 0 assoc_delta:0 disassoc_count:0 wpa_auth_delta: -1 radius_auth_status: N/A ip_delta: -1 ip_assign_type: N/A auth_failures: 0 assoc_failures: 0 wpa_auth_failures: 1 ip_failures: 0 event_type: failure 
+
+
+Unifi Controller
+
+Changes to config
+<14>Aug 22 10:48:09 ("U7LT,788a205089,v3.9.42.9152") syslog: ace_reporter.reporter_handle_response(): [setparam] applying new system.cfg
