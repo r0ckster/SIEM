@@ -1,0 +1,6 @@
+Upload from GUI > restore.
+
+If backup over 512mb
+- copy backup file to Qradar, /store/backupHost/inbound
+- wait few seconds so the backup appears in GUI
+- once visible > restore
