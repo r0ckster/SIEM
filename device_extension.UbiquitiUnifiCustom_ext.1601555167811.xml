@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:device-extension xmlns:ns2="event_parsing/device_extension">
+    <pattern use-default-pattern="true" type="JavaPattern" id="EventCategory-Pattern-1">&quot;event_type&quot;:&quot;(.*?)&quot;</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="EventCategory-Pattern-2">Failed admin login</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="EventCategory-Pattern-3">log in from</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="EventName-Pattern-1">&quot;event_id&quot;:&quot;(.*?)&quot;</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="EventName-Pattern-2">INFO  (.*?) </pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="SourceIp-Pattern-1">from (\d+.\d+.\d+.\d+)</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="SourceMAC-Pattern-1">&quot;mac&quot;:&quot;(.*?)&quot;</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="UserName-Pattern-1">Failed admin login for (.*) from</pattern>
+    <pattern use-default-pattern="true" type="JavaPattern" id="UserName-Pattern-2">\[event] Admin\[(.*)]</pattern>
+    <pattern type="JavaPattern" id="AllEvents">(.*?)</pattern>
+    <match-group device-type-id-override="4005" order="1">
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="EventCategory-Pattern-1" field="EventCategory"/>
+        <matcher order="2" enable-substitutions="true" capture-group="User Login Failed" pattern-id="EventCategory-Pattern-2" field="EventCategory"/>
+        <matcher order="3" enable-substitutions="true" capture-group="User Login Successful" pattern-id="EventCategory-Pattern-3" field="EventCategory"/>
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="EventName-Pattern-1" field="EventName"/>
+        <matcher order="2" enable-substitutions="true" capture-group="\1" pattern-id="EventName-Pattern-2" field="EventName"/>
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="SourceIp-Pattern-1" field="SourceIp"/>
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="SourceMAC-Pattern-1" field="SourceMAC"/>
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="UserName-Pattern-1" field="UserName"/>
+        <matcher order="2" enable-substitutions="true" capture-group="\1" pattern-id="UserName-Pattern-2" field="UserName"/>
+        <event-match-multiple force-qidmap-lookup-on-fixup="true" send-identity="UseDSMResults" pattern-id="AllEvents"/>
+    </match-group>
+</ns2:device-extension>
