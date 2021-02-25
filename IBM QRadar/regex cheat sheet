@@ -3,7 +3,7 @@ application="(.*?)"\s
 13:33.758 AAA0000-0 RT_FLOW - APPTRACK_SESSION_CLOSE [sampleuser@1111.1.1.1.1.11 reason="unset" source-address="192.0.2.0" source-port="10" destination-address="192.0.2.255" destination-port="10" service-name="sample-service" application="sample-application" nested-application="None" nat-source-address="192.0.2.0" nat-source-port="10" nat-destination-address="192.0.2.255" nat-destination-port="10" src-nat-rule-name="None" dst-nat-rule-name
 
 Another Application application=junos:sample-tcp [189]
-application=junos:(.*?\s\[\d{1,10}\])
+application=junos:(.*?\s\[\d{1,10}\]) 
 filename=samplefile	record-type=D	lpdf_id=5	profile=pdf	timestamp=2009-10-19 16:58:04 	input-interface=AA-0/0/0.0	subscriber-name=sampleuser	address=192.0.2.0	mask=255.255.255.255	vrf-name=	application-group= 	application=junos:sample-tcp [189]	input-packets=1	input-bytes=56	output-packets=6	output-bytes=336
 
 Application Object ID  id=000000
